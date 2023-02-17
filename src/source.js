@@ -8,7 +8,7 @@ export default function loadHtml(app) {
 				// 替换head标签 web页面只允许有一个head标签
 				return match
 					.replace(/<head/i, '<micro-app-head')
-					.replace(/<\/head>/i, '</micro-app-head')
+					.replace(/<\/head>/i, '</micro-app-head>')
 		})
 			.replace(/<body[^>]*>[\s\S]*?<\/body>/i, (match) => {
 				// 将body标签替换为micro-app-body，防止与基座应用的body标签重复导致的问题。

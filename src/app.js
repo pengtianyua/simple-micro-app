@@ -9,8 +9,8 @@ export default class CreatApp {
 		this.url = url
 		this.container = container
 		this.status = 'loading'
-		this.sandbox = new SandBox(name)
 		loadHtml(this)
+		this.sandbox = new SandBox(name)
 	}
 
 	// 组件状态 包括 created/loading/mount/unmount
