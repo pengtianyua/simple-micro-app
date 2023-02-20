@@ -9,7 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       微应用React
-      <p className="text">微应用内容</p>
+      <div className="text">微应用内容</div>
       <Page1 />
     </div>
   );
