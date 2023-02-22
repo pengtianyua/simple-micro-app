@@ -21,3 +21,11 @@ window.addEventListener('scroll', () => {
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+window.microApp?.addDataListener((data) => {
+  console.log('接收数据', data)
+})
+
+setTimeout(() => {
+  window.microApp?.dispatch({name: '来自子应用的数据'})
+}, 3000)

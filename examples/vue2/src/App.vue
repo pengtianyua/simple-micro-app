@@ -8,6 +8,9 @@
       v-if="isShow"
       name="app"
       url="http://localhost:3000"
+      id="micro-app-app1"
+      :data="data"
+      @datachange="handleDataChange"
     >
     </micro-app>
   </div>
@@ -20,13 +23,24 @@ export default {
   },
   data() {
     return {
-      isShow: true
+      isShow: true,
+      data: {}
     };
   },
   methods: {
     handleToggle() {
       this.isShow = !this.isShow
+    },
+    handleDataChange(e) {
+      console.log('接收数据', e)
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.data = {
+        name: '来自基座应用的数据'
+      }
+    }, 2000)
   }
 }
 </script>

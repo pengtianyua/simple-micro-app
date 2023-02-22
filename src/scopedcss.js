@@ -18,15 +18,20 @@ export default function scopedCSS(styleElement, appName) {
 	}
 
 	if (styleElement.textContent) {
+		// 将元素内容赋值给模板元素
 		templateStyle.textContent = styleElement.textContent
 		// 格式化规则 并将格式化后的规则赋值给style元素
 		styleElement.textContent = scopedRule(Array.from(templateStyle.sheet?.cssRules ?? []), prefix)
 		templateStyle.textContent = ''
 	} else {
+		// 监听动态添加内容的style元素
 		const observer = new MutationObserver(() => {
+			// 断开监听
 			observer.disconnect()
+			// 格式化规则 并将格式化后的规则赋值给style元素
 			styleElement.textContent = scopedRule(Array.from(styleElement.sheet?.cssRules ?? []), prefix)
 		})
+		// 监听style元素变化
 		observer.observe(styleElement, {childList: true})
 	}
 }
