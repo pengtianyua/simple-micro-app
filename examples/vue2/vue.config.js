@@ -11,6 +11,6 @@ module.exports = defineConfig({
   // 跨域代理
   devServer: {
     https: false,
-    proxy: 'http://localhost:3000'
+    proxy: 'http://127.0.0.1:3000'
   }
 })
